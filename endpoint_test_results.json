@@ -1,0 +1,884 @@
+{
+  "test_summary": {
+    "total_tests": 22,
+    "passed_tests": 18,
+    "failed_tests": 4,
+    "success_rate": 81.81818181818183,
+    "timestamp": "2025-08-04T18:12:26.584899"
+  },
+  "test_results": [
+    {
+      "endpoint": "/",
+      "method": "GET",
+      "description": "Root endpoint",
+      "status_code": 200,
+      "expected_status": 200,
+      "status_ok": true,
+      "response_data": {
+        "message": "\u2705 FastAPI is working!",
+        "status": "healthy"
+      },
+      "response_time": 0.004491,
+      "success": true
+    },
+    {
+      "endpoint": "/health",
+      "method": "GET",
+      "description": "Health check",
+      "status_code": 200,
+      "expected_status": 200,
+      "status_ok": true,
+      "response_data": {
+        "status": "healthy",
+        "message": "All systems operational \u2705",
+        "timestamp": "2025-08-04T12:42:26.339981"
+      },
+      "response_time": 0.005872,
+      "success": true
+    },
+    {
+      "endpoint": "/api/v1/config/",
+      "method": "GET",
+      "description": "Complete configuration",
+      "status_code": 200,
+      "expected_status": 200,
+      "status_ok": true,
+      "response_data": {
+        "branding": {
+          "companyName": "Ally Platform",
+          "logoUrl": "/logo.png",
+          "primaryColor": "#007bff",
+          "secondaryColor": "#6c757d"
+        },
+        "features": {
+          "chatEnabled": true,
+          "notificationsEnabled": true,
+          "analyticsEnabled": true,
+          "darkModeEnabled": true,
+          "debugRoutes": true,
+          "adminPanel": true,
+          "rateLimiting": false
+        },
+        "ui": {
+          "theme": "light",
+          "language": "en",
+          "timezone": "UTC"
+        },
+        "api": {
+          "timeout": 30,
+          "retryCount": 3,
+          "baseUrl": "http://localhost:8000"
+        },
+        "company": {
+          "name": "Ally Platform",
+          "contactEmail": "support@allyplatform.com",
+          "supportUrl": "https://support.allyplatform.com"
+        }
+      },
+      "response_time": 0.017724,
+      "success": true
+    },
+    {
+      "endpoint": "/api/v1/config/branding",
+      "method": "GET",
+      "description": "Branding configuration",
+      "status_code": 200,
+      "expected_status": 200,
+      "status_ok": true,
+      "response_data": {
+        "companyName": "Ally Platform",
+        "logoUrl": "/logo.png",
+        "primaryColor": "#007bff",
+        "secondaryColor": "#6c757d"
+      },
+      "response_time": 0.008406,
+      "success": true
+    },
+    {
+      "endpoint": "/api/v1/config/features",
+      "method": "GET",
+      "description": "Feature flags",
+      "status_code": 200,
+      "expected_status": 200,
+      "status_ok": true,
+      "response_data": {
+        "chatEnabled": true,
+        "notificationsEnabled": true,
+        "analyticsEnabled": true,
+        "darkModeEnabled": true,
+        "debugRoutes": true,
+        "adminPanel": true,
+        "rateLimiting": false
+      },
+      "response_time": 0.005403,
+      "success": true
+    },
+    {
+      "endpoint": "/api/v1/config/ui",
+      "method": "GET",
+      "description": "UI configuration",
+      "status_code": 200,
+      "expected_status": 200,
+      "status_ok": true,
+      "response_data": {
+        "theme": "light",
+        "language": "en",
+        "timezone": "UTC"
+      },
+      "response_time": 0.006109,
+      "success": true
+    },
+    {
+      "endpoint": "/api/v1/config/ai",
+      "method": "GET",
+      "description": "AI configuration",
+      "status_code": 200,
+      "expected_status": 200,
+      "status_ok": true,
+      "response_data": {},
+      "response_time": 0.007823,
+      "success": true
+    },
+    {
+      "endpoint": "/api/v1/config/company",
+      "method": "GET",
+      "description": "Company information",
+      "status_code": 200,
+      "expected_status": 200,
+      "status_ok": true,
+      "response_data": {
+        "company_name": "Ally Platform",
+        "client_id": "unknown",
+        "version": "unknown"
+      },
+      "response_time": 0.006209,
+      "success": true
+    },
+    {
+      "endpoint": "/api/v1/config/health",
+      "method": "GET",
+      "description": "Config health check",
+      "status_code": 200,
+      "expected_status": 200,
+      "status_ok": true,
+      "response_data": {
+        "status": "healthy",
+        "message": "Configuration API is working",
+        "company_name": "Ally Platform",
+        "config_sections": 5,
+        "config_loaded": true
+      },
+      "response_time": 0.006444,
+      "success": true
+    },
+    {
+      "endpoint": "/api/v1/config/feature/chatEnabled",
+      "method": "GET",
+      "description": "Specific feature flag",
+      "status_code": 200,
+      "expected_status": 200,
+      "status_ok": true,
+      "response_data": {
+        "feature": "chatEnabled",
+        "enabled": true
+      },
+      "response_time": 0.006775,
+      "success": true
+    },
+    {
+      "endpoint": "/api/v1/config/branding",
+      "method": "GET",
+      "description": "Dynamic section (branding)",
+      "status_code": 200,
+      "expected_status": 200,
+      "status_ok": true,
+      "response_data": {
+        "companyName": "Ally Platform",
+        "logoUrl": "/logo.png",
+        "primaryColor": "#007bff",
+        "secondaryColor": "#6c757d"
+      },
+      "response_time": 0.014554,
+      "success": true
+    },
+    {
+      "endpoint": "/api/v1/config/reload",
+      "method": "POST",
+      "description": "Reload configuration",
+      "status_code": 200,
+      "expected_status": 200,
+      "status_ok": true,
+      "response_data": {
+        "message": "Configuration reloaded successfully",
+        "status": "success",
+        "reload_timestamp": "unknown",
+        "changes_detected": {
+          "company_name_changed": false,
+          "version_changed": false
+        },
+        "configuration_info": {
+          "company_name": "Ally Platform",
+          "version": "unknown",
+          "sections": 5,
+          "client_id": "unknown"
+        },
+        "cache_info": {
+          "memory_cache_cleared": true,
+          "redis_cache_updated": true,
+          "redis_available": true
+        }
+      },
+      "response_time": 0.006663,
+      "success": true
+    },
+    {
+      "endpoint": "/api/v1/config/clear-cache",
+      "method": "POST",
+      "description": "Clear cache",
+      "status_code": 200,
+      "expected_status": 200,
+      "status_ok": true,
+      "response_data": {
+        "message": "Configuration cache cleared successfully",
+        "status": "success",
+        "cache_info": {
+          "memory_cache_cleared": true,
+          "redis_cache_cleared": true,
+          "redis_available": true
+        },
+        "note": "Next configuration request will reload from file"
+      },
+      "response_time": 0.008568,
+      "success": true
+    },
+    {
+      "endpoint": "/test/dependencies",
+      "method": "GET",
+      "description": "Dependencies test",
+      "status_code": 200,
+      "expected_status": 200,
+      "status_ok": true,
+      "response_data": {
+        "message": "Backend dependencies test completed",
+        "timestamp": "2025-08-04T12:42:26.491832",
+        "dependencies_status": {
+          "fastapi": "\u2705 Working",
+          "pydantic": "\u2705 Working",
+          "uvicorn": "\u2705 Working",
+          "redis": "\u26a0\ufe0f Library works, server not running: Error 111 connecting to localhost:6379. Connection",
+          "sqlalchemy": "\u2705 Working",
+          "mysql_connector": "\u2705 Library imported",
+          "google_generativeai": "\u2705 Library imported",
+          "weaviate_client": "\u2705 Library imported"
+        }
+      },
+      "response_time": 0.030467,
+      "success": true
+    },
+    {
+      "endpoint": "/test/config-loader",
+      "method": "GET",
+      "description": "Config loader test",
+      "status_code": 200,
+      "expected_status": 200,
+      "status_ok": true,
+      "response_data": {
+        "message": "\u274c Configuration loader error: 'layout'",
+        "timestamp": "2025-08-04T12:42:26.498760",
+        "config_loaded": false,
+        "error": "'layout'"
+      },
+      "response_time": 0.004855,
+      "success": true
+    },
+    {
+      "endpoint": "/test/pydantic",
+      "method": "POST",
+      "description": "Pydantic validation test",
+      "status_code": 422,
+      "expected_status": 200,
+      "status_ok": false,
+      "response_data": {
+        "detail": [
+          {
+            "type": "missing",
+            "loc": [
+              "body",
+              "text"
+            ],
+            "msg": "Field required",
+            "input": {
+              "name": "Test User",
+              "email": "test@example.com",
+              "age": 25
+            }
+          }
+        ]
+      },
+      "response_time": 0.008602,
+      "success": false
+    },
+    {
+      "endpoint": "/docs",
+      "method": "GET",
+      "description": "Swagger documentation",
+      "status_code": 200,
+      "expected_status": 200,
+      "status_ok": true,
+      "response_data": {
+        "raw_response": "\n    <!DOCTYPE html>\n    <html>\n    <head>\n    <link type=\"text/css\" rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/swagger-ui-dist@5/swagger-ui.css\">\n    <link rel=\"shortcut icon\" href=\"https://fastapi.tiangolo.com/img/favicon.png\">\n    <title>Ally Platform API - Swagger UI</title>\n    </head>\n    <body>\n    <div id=\"swagger-ui\">\n    </div>\n    <script src=\"https://cdn.jsdelivr.net/npm/swagger-ui-dist@5/swagger-ui-bundle.js\"></script>\n    <!-- `SwaggerUIBundle` is now available on the page -->\n    <script>\n    const ui = SwaggerUIBundle({\n        url: '/openapi.json',\n    \"dom_id\": \"#swagger-ui\",\n\"layout\": \"BaseLayout\",\n\"deepLinking\": true,\n\"showExtensions\": true,\n\"showCommonExtensions\": true,\noauth2RedirectUrl: window.location.origin + '/docs/oauth2-redirect',\n    presets: [\n        SwaggerUIBundle.presets.apis,\n        SwaggerUIBundle.SwaggerUIStandalonePreset\n        ],\n    })\n    </script>\n    </body>\n    </html>\n    "
+      },
+      "response_time": 0.00356,
+      "success": true
+    },
+    {
+      "endpoint": "/redoc",
+      "method": "GET",
+      "description": "ReDoc documentation",
+      "status_code": 200,
+      "expected_status": 200,
+      "status_ok": true,
+      "response_data": {
+        "raw_response": "\n    <!DOCTYPE html>\n    <html>\n    <head>\n    <title>Ally Platform API - ReDoc</title>\n    <!-- needed for adaptive design -->\n    <meta charset=\"utf-8\"/>\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    \n    <link href=\"https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:300,400,700\" rel=\"stylesheet\">\n    \n    <link rel=\"shortcut icon\" href=\"https://fastapi.tiangolo.com/img/favicon.png\">\n    <!--\n    ReDoc doesn't change outer page styles\n    -->\n    <style>\n      body {\n        margin: 0;\n        padding: 0;\n      }\n    </style>\n    </head>\n    <body>\n    <noscript>\n        ReDoc requires Javascript to function. Please enable it to browse the documentation.\n    </noscript>\n    <redoc spec-url=\"/openapi.json\"></redoc>\n    <script src=\"https://cdn.jsdelivr.net/npm/redoc@2/bundles/redoc.standalone.js\"> </script>\n    </body>\n    </html>\n    "
+      },
+      "response_time": 0.005274,
+      "success": true
+    },
+    {
+      "endpoint": "/openapi.json",
+      "method": "GET",
+      "description": "OpenAPI specification",
+      "status_code": 200,
+      "expected_status": 200,
+      "status_ok": true,
+      "response_data": {
+        "openapi": "3.1.0",
+        "info": {
+          "title": "Ally Platform API",
+          "description": "Backend API for Ally Platform with environment-specific configuration management",
+          "version": "1.0.0"
+        },
+        "paths": {
+          "/": {
+            "get": {
+              "summary": "Root",
+              "description": "Root endpoint to test FastAPI",
+              "operationId": "root__get",
+              "responses": {
+                "200": {
+                  "description": "Successful Response",
+                  "content": {
+                    "application/json": {
+                      "schema": {}
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/health": {
+            "get": {
+              "summary": "Health Check",
+              "description": "Health check endpoint",
+              "operationId": "health_check_health_get",
+              "responses": {
+                "200": {
+                  "description": "Successful Response",
+                  "content": {
+                    "application/json": {
+                      "schema": {}
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/api/v1/config/": {
+            "get": {
+              "summary": "Get Config",
+              "description": "Get the complete configuration.\n\nReturns:\n    Dict containing all configuration data",
+              "operationId": "get_config_api_v1_config__get",
+              "responses": {
+                "200": {
+                  "description": "Successful Response",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "additionalProperties": true,
+                        "type": "object",
+                        "title": "Response Get Config Api V1 Config  Get"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/api/v1/config/branding": {
+            "get": {
+              "summary": "Get Branding",
+              "description": "Get branding configuration only.\n\nReturns:\n    Dict containing branding configuration",
+              "operationId": "get_branding_api_v1_config_branding_get",
+              "responses": {
+                "200": {
+                  "description": "Successful Response",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "additionalProperties": true,
+                        "type": "object",
+                        "title": "Response Get Branding Api V1 Config Branding Get"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/api/v1/config/features": {
+            "get": {
+              "summary": "Get Features",
+              "description": "Get features configuration only.\n\nReturns:\n    Dict containing features configuration",
+              "operationId": "get_features_api_v1_config_features_get",
+              "responses": {
+                "200": {
+                  "description": "Successful Response",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "additionalProperties": true,
+                        "type": "object",
+                        "title": "Response Get Features Api V1 Config Features Get"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/api/v1/config/ui": {
+            "get": {
+              "summary": "Get Ui Config",
+              "description": "Get UI configuration only.\n\nReturns:\n    Dict containing UI configuration",
+              "operationId": "get_ui_config_api_v1_config_ui_get",
+              "responses": {
+                "200": {
+                  "description": "Successful Response",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "additionalProperties": true,
+                        "type": "object",
+                        "title": "Response Get Ui Config Api V1 Config Ui Get"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/api/v1/config/ai": {
+            "get": {
+              "summary": "Get Ai Config",
+              "description": "Get AI configuration only.\n\nReturns:\n    Dict containing AI configuration",
+              "operationId": "get_ai_config_api_v1_config_ai_get",
+              "responses": {
+                "200": {
+                  "description": "Successful Response",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "additionalProperties": true,
+                        "type": "object",
+                        "title": "Response Get Ai Config Api V1 Config Ai Get"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/api/v1/config/feature/{feature_name}": {
+            "get": {
+              "summary": "Get Feature Flag",
+              "description": "Get a specific feature flag status.\n\nArgs:\n    feature_name: Name of the feature to check\n\nReturns:\n    Dict containing feature name and status",
+              "operationId": "get_feature_flag_api_v1_config_feature__feature_name__get",
+              "parameters": [
+                {
+                  "name": "feature_name",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "string",
+                    "title": "Feature Name"
+                  }
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "Successful Response",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "type": "object",
+                        "additionalProperties": true,
+                        "title": "Response Get Feature Flag Api V1 Config Feature  Feature Name  Get"
+                      }
+                    }
+                  }
+                },
+                "422": {
+                  "description": "Validation Error",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/HTTPValidationError"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/api/v1/config/company": {
+            "get": {
+              "summary": "Get Company Info",
+              "description": "Get company information.\n\nReturns:\n    Dict containing company name and basic info",
+              "operationId": "get_company_info_api_v1_config_company_get",
+              "responses": {
+                "200": {
+                  "description": "Successful Response",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "additionalProperties": true,
+                        "type": "object",
+                        "title": "Response Get Company Info Api V1 Config Company Get"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/api/v1/config/health": {
+            "get": {
+              "summary": "Config Health Check",
+              "description": "Health check for configuration API.\n\nReturns:\n    Dict containing health status",
+              "operationId": "config_health_check_api_v1_config_health_get",
+              "responses": {
+                "200": {
+                  "description": "Successful Response",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "additionalProperties": true,
+                        "type": "object",
+                        "title": "Response Config Health Check Api V1 Config Health Get"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/api/v1/config/reload": {
+            "post": {
+              "summary": "Reload Configuration",
+              "description": "Reload configuration from file and update cache.\n\nAdmin endpoint to force configuration reload from disk.\nClears both memory and Redis cache, then loads fresh configuration.\n\nReturns:\n    Dict containing reload status and updated configuration info",
+              "operationId": "reload_configuration_api_v1_config_reload_post",
+              "responses": {
+                "200": {
+                  "description": "Successful Response",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "additionalProperties": true,
+                        "type": "object",
+                        "title": "Response Reload Configuration Api V1 Config Reload Post"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/api/v1/config/clear-cache": {
+            "post": {
+              "summary": "Clear Configuration Cache",
+              "description": "Clear configuration cache without reloading.\n\nAdmin endpoint to clear both memory and Redis cache.\nNext configuration request will reload from file.\n\nReturns:\n    Dict containing cache clear status",
+              "operationId": "clear_configuration_cache_api_v1_config_clear_cache_post",
+              "responses": {
+                "200": {
+                  "description": "Successful Response",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "additionalProperties": true,
+                        "type": "object",
+                        "title": "Response Clear Configuration Cache Api V1 Config Clear Cache Post"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/api/v1/config/{section}": {
+            "get": {
+              "summary": "Get Config Section",
+              "description": "Get a specific configuration section.\n\nArgs:\n    section: Name of the configuration section (e.g., 'app', 'database', 'security')\n\nReturns:\n    Dict containing the requested configuration section",
+              "operationId": "get_config_section_api_v1_config__section__get",
+              "parameters": [
+                {
+                  "name": "section",
+                  "in": "path",
+                  "required": true,
+                  "schema": {
+                    "type": "string",
+                    "title": "Section"
+                  }
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "Successful Response",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "type": "object",
+                        "additionalProperties": true,
+                        "title": "Response Get Config Section Api V1 Config  Section  Get"
+                      }
+                    }
+                  }
+                },
+                "422": {
+                  "description": "Validation Error",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/HTTPValidationError"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/test/dependencies": {
+            "get": {
+              "tags": [
+                "Testing"
+              ],
+              "summary": "Test Dependencies",
+              "description": "Test all installed backend dependencies",
+              "operationId": "test_dependencies_test_dependencies_get",
+              "responses": {
+                "200": {
+                  "description": "Successful Response",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/TestResponse"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/test/pydantic": {
+            "post": {
+              "tags": [
+                "Testing"
+              ],
+              "summary": "Test Pydantic Validation",
+              "description": "Test Pydantic model validation",
+              "operationId": "test_pydantic_validation_test_pydantic_post",
+              "requestBody": {
+                "content": {
+                  "application/json": {
+                    "schema": {
+                      "$ref": "#/components/schemas/UserInput"
+                    }
+                  }
+                },
+                "required": true
+              },
+              "responses": {
+                "200": {
+                  "description": "Successful Response",
+                  "content": {
+                    "application/json": {
+                      "schema": {}
+                    }
+                  }
+                },
+                "422": {
+                  "description": "Validation Error",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/HTTPValidationError"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/test/config-loader": {
+            "get": {
+              "tags": [
+                "Testing"
+              ],
+              "summary": "Test Config Loader",
+              "description": "Test the configuration loader functionality",
+              "operationId": "test_config_loader_test_config_loader_get",
+              "responses": {
+                "200": {
+                  "description": "Successful Response",
+                  "content": {
+                    "application/json": {
+                      "schema": {}
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "components": {
+          "schemas": {
+            "HTTPValidationError": {
+              "properties": {
+                "detail": {
+                  "items": {
+                    "$ref": "#/components/schemas/ValidationError"
+                  },
+                  "type": "array",
+                  "title": "Detail"
+                }
+              },
+              "type": "object",
+              "title": "HTTPValidationError"
+            },
+            "TestResponse": {
+              "properties": {
+                "message": {
+                  "type": "string",
+                  "title": "Message"
+                },
+                "timestamp": {
+                  "type": "string",
+                  "title": "Timestamp"
+                },
+                "dependencies_status": {
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "Dependencies Status"
+                }
+              },
+              "type": "object",
+              "required": [
+                "message",
+                "timestamp",
+                "dependencies_status"
+              ],
+              "title": "TestResponse"
+            },
+            "UserInput": {
+              "properties": {
+                "text": {
+                  "type": "string",
+                  "title": "Text"
+                }
+              },
+              "type": "object",
+              "required": [
+                "text"
+              ],
+              "title": "UserInput"
+            },
+            "ValidationError": {
+              "properties": {
+                "loc": {
+                  "items": {
+                    "anyOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "integer"
+                      }
+                    ]
+                  },
+                  "type": "array",
+                  "title": "Location"
+                },
+                "msg": {
+                  "type": "string",
+                  "title": "Message"
+                },
+                "type": {
+                  "type": "string",
+                  "title": "Error Type"
+                }
+              },
+              "type": "object",
+              "required": [
+                "loc",
+                "msg",
+                "type"
+              ],
+              "title": "ValidationError"
+            }
+          }
+        }
+      },
+      "response_time": 0.017079,
+      "success": true
+    },
+    {
+      "endpoint": "/api/v1/config/nonexistent",
+      "method": "GET",
+      "description": "Non-existent config section",
+      "status_code": 404,
+      "expected_status": 404,
+      "status_ok": true,
+      "response_data": {
+        "detail": "Configuration section 'nonexistent' not found"
+      },
+      "response_time": 0.022472,
+      "success": false
+    },
+    {
+      "endpoint": "/api/v1/config/feature/nonexistent",
+      "method": "GET",
+      "description": "Non-existent feature flag",
+      "status_code": 200,
+      "expected_status": 404,
+      "status_ok": false,
+      "response_data": {
+        "feature": "nonexistent",
+        "enabled": false
+      },
+      "response_time": 0.00544,
+      "success": false
+    },
+    {
+      "endpoint": "/nonexistent",
+      "method": "GET",
+      "description": "Non-existent endpoint",
+      "status_code": 404,
+      "expected_status": 404,
+      "status_ok": true,
+      "response_data": {
+        "detail": "Not Found"
+      },
+      "response_time": 0.00701,
+      "success": false
+    }
+  ]
+}

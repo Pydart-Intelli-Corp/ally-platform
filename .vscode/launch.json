@@ -1,0 +1,31 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: Current File",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "Python: FastAPI",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/backend/main.py",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/backend"
+      }
+    },
+    {
+      "name": "Node.js: Launch Program",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/frontend/src/index.js",
+      "skipFiles": ["<node_internals>/**"]
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "clientId": "ally-demo",
+    "lastUpdated": "2025-08-04T10:30:00Z",
+    "configName": "Ally Platform Client Configuration",
+    "description": "Active client configuration for the Ally Platform"
+  },
+  "branding": {
+    "companyName": "Ally Platform",
+    "logoUrl": "/assets/ally-logo.svg",
+    "faviconUrl": "/assets/favicon.ico",
+    "primaryColor": "#3B82F6",
+    "secondaryColor": "#64748B",
+    "accentColor": "#EF4444",
+    "font": "inter"
+  },
+  "features": {
+    "chatEnabled": true,
+    "voiceEnabled": false,
+    "fileUploadEnabled": true,
+    "realTimeEnabled": true,
+    "analyticsEnabled": true,
+    "notificationsEnabled": true,
+    "collaborationEnabled": false,
+    "apiAccessEnabled": false,
+    "exportEnabled": true
+  },
+  "ui": {
+    "layout": "modern",
+    "darkMode": true,
+    "themeToggle": true,
+    "sidebarCollapsible": true,
+    "compactMode": false,
+    "animationsEnabled": true,
+    "accessibilityMode": false
+  },
+  "ai": {
+    "model": "gemini-2.5-flash-lite",
+    "promptTemplate": "You are a helpful AI assistant for {companyName}. Always be professional, informative, and helpful. Respond in a clear and concise manner.",
+    "temperature": 0.7,
+    "maxTokens": 2000,
+    "systemMessage": "You are an AI assistant integrated into the Ally Platform. Help users with their questions and tasks efficiently.",
+    "responseFormat": "markdown"
+  },
+  "integrations": {
+    "weaviateUrl": "https://chmjnz2nq6wviibztt7chg.c0.asia-southeast1.gcp.weaviate.cloud",
+    "weaviateApiKey": "QTRpTHdkcytOWWFqVW9CeV91UmZmMlNlcytFZUxlcVA5aFo4WjBPRHFOdlNtOU9qaDFxOG12eTJSYW9nPV92MjAw",
+    "geminiApiKey": "AIzaSyB1Cr_w2ioWBlDgSWlkMjYRFPzxAq_AkLc",
+    "openaiApiKey": "",
+    "anthropicApiKey": "",
+    "webhook": {
+      "url": "",
+      "secret": "",
+      "events": []
+    }
+  },
+  "languages": {
+    "default": "en",
+    "supported": ["en", "hi", "ar"],
+    "rtlSupport": true,
+    "autoDetect": true
+  },
+  "security": {
+    "jwtExpiration": 3600,
+    "refreshTokenExpiration": 604800,
+    "rateLimit": 1000,
+    "sessionTimeout": 7200,
+    "passwordPolicy": {
+      "minLength": 8,
+      "requireUppercase": true,
+      "requireNumbers": true,
+      "requireSpecialChars": false
+    },
+    "mfaEnabled": false
+  },
+  "analytics": {
+    "enabled": true,
+    "trackingId": "",
+    "customEvents": true,
+    "userJourneyTracking": false,
+    "performanceMonitoring": true,
+    "errorTracking": true
+  },
+  "notifications": {
+    "email": {
+      "enabled": true,
+      "smtpHost": "smtp.gmail.com",
+      "smtpPort": 587,
+      "fromAddress": "info.pydart@gmail.com",
+      "templates": {
+        "welcome": "welcome-template",
+        "passwordReset": "password-reset-template"
+      }
+    },
+    "push": {
+      "enabled": false,
+      "vapidPublicKey": ""
+    },
+    "inApp": {
+      "enabled": true,
+      "position": "top-right"
+    }
+  },
+  "limits": {
+    "maxUsers": 100,
+    "maxStorageGB": 5.0,
+    "maxApiCallsPerMonth": 50000,
+    "maxFileUploadMB": 10.0
+  }
+}

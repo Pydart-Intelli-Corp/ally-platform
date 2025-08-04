@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ally-platform-backend"
+version = "1.0.0"
+description = "Backend API for Ally Platform with configuration management"
+authors = [
+    {name = "Ally Platform Team", email = "info.pydart@gmail.com"}
+]
+dependencies = [
+    "fastapi>=0.104.0",
+    "uvicorn[standard]>=0.24.0",
+    "pydantic>=2.0.0",
+    "redis>=5.0.0",
+    "python-multipart>=0.0.6",
+    "python-jose[cryptography]>=3.3.0",
+    "passlib[bcrypt]>=1.7.4",
+    "sqlalchemy>=2.0.0",
+    "mysql-connector-python>=8.0.0",
+    "google-generativeai>=0.3.0",
+    "weaviate-client>=3.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "httpx>=0.25.0",
+    "pylint>=3.0.0",
+    "black>=23.0.0",
+    "isort>=5.12.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["app*"]
+
+[tool.pylint.MASTER]
+init-hook = 'import sys; sys.path.append(".")'
+
+[tool.pylint."MESSAGES CONTROL"]
+disable = [
+    "missing-docstring",
+    "too-few-public-methods",
+    "too-many-arguments",
+    "too-many-locals",
+]
+
+[tool.black]
+line-length = 88
+target-version = ['py311']
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+line_length = 88

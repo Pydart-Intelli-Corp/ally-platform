@@ -1,0 +1,51 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "python.defaultInterpreterPath": "python",
+  "python.formatting.provider": "black",
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.linting.lintOnSave": true,
+  "python.analysis.extraPaths": ["./backend", "./frontend/src"],
+  "python.analysis.autoImportCompletions": true,
+  "python.analysis.autoSearchPaths": true,
+  "python.analysis.diagnosticMode": "workspace",
+  "pylint.args": [
+    "--init-hook=import sys; sys.path.append('.')",
+    "--disable=missing-docstring,too-few-public-methods,import-error"
+  ],
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/node_modules": true,
+    "**/.pytest_cache": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/__pycache__": true,
+    "**/.pytest_cache": true
+  }
+}
